@@ -2,7 +2,11 @@
   "name": "push",
   "version": "1.0.0",
   "description": "",
+<<<<<<< HEAD
   "main": "index.html",
+=======
+  "main": "index.js",
+>>>>>>> origin
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -6,33 +6,27 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="subscribe">Subscribe</button>
+    <button onclick="subscribe()">Subscribe</button>
 
-<script>
+    <script>
 
-addEventListener('load', async ( =>
-
-    {
+        addEventListener('load', async () =>    {
     let sw = await navigator.serviceWorker.register('./sw.js')
     console.log(sw)
     
     })
 
-async fuction subscribe() {
+    async function subscribe() {
 
+        let sw = await navigator.serviceWorker.ready;
 
-    let sw = await navigator.serviceWorker.ready;
-
-    let push = await sw.pushManager,subscribe({
+        let push = await sw.pushManager.subscribe({
 
         userVisibleOnly: true,
-        applicationServerKey: 'BKdL6y5Ze3o0ivkvrzTYvDaWySDZK469HX94zISy1o3Eu9xQIdsd1aWcrDy2NOkZnXiCQtce2J1l-6YAesrKuGY'
+        applicationServerKey: 'BKdL6y5Ze3o0ivkvrzTYvDaWySDZK469HX94zISy1o3Eu9xQIdsd1aWcrDy2NOkZnXiCQtce2J1l-6YAesrKuGY',
     })
     console.log(JSON.stringify(push))
-}
-
-
-
+    }
 </script>
 
 </body>
